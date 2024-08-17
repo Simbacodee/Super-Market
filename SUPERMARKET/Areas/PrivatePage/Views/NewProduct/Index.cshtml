@@ -1,0 +1,101 @@
+﻿@model SUPERMARKET.Models.SanPham
+@using SUPERMARKET.Models
+
+@{
+    TaiKhoan x = Session["TtDangNhap"] as TaiKhoan;
+    ViewBag.Title = "Index";
+}
+<section class="content">
+    <div class="container-fluid">
+        @using (Html.BeginForm("Index", "NewProduct", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(m => m.maSP)
+            <div class="row">
+            @*col-left*@
+                <div class="col-md-6">
+                <!-- general form elements -->
+                <div class="card card-warning">
+                    <div class="card-header">
+                        <h3 class="card-title">Hình ảnh sản phẩm</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="hinhSanPham">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="">Upload</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+                </div>
+            @*col-right*@
+            <div class="col-md-6">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Thông tin chính</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Tên sản phẩm</label>
+                                @Html.TextBoxFor(m => m.tenSP, new { @class = "form-control", @placeholder = " Nhập tên sản phẩm..." })
+                            </div>
+                            <div class="form-group">
+                                <label>Nội dung tóm tắt</label>
+                                @Html.TextAreaFor(m => m.ndTomTat, new { @class = "form-control", @placeholder = " Nhập tên sản phẩm...", @rows = "4" })
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Giá bán</label>
+                                            @Html.TextBoxFor(m => m.giaBan, new { @class = "form-control", @placeholder = "Giá sản phẩm" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Loại hàng </label>
+                                @Html.TextBoxFor(m => m.maLoai, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Ngày đăng</label>
+                                            @Html.TextBoxFor(m => m.ngayDang, new { @class = "form-control", @disabled = "disabled" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </form>
+                </div>
+            </div>
+            </div>
+
+         }
+
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>

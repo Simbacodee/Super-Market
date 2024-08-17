@@ -1,0 +1,11 @@
+﻿
+@using SUPERMARKET.Models;
+@{
+    TaiKhoan x = (TaiKhoan)Session["TtDangNhap"];
+    if (x == null)
+    {
+        Response.Redirect("~/LoginAdmin");
+    }
+
+    Layout = "~/Areas/PrivatePage/Views/Shared/_Layout.cshtml"; 
+}

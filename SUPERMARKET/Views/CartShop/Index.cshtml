@@ -1,0 +1,78 @@
+﻿@using SUPERMARKET.Models;
+@{
+    Layout = null;
+    CartShop x = ViewData["Cart"] as CartShop;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart UI</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/shopcart.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
+</head>
+<body>
+    <div class="CartContainer">
+        <div class="Header">
+            <h3 class="Heading">Shopping Cart</h3>
+        </div>
+        @{
+            foreach (CtDonHang i in x.SanPhamDC.Values)
+            {
+                <div class="Cart-Items">
+
+                    <div class="image-box">
+                        <img src="@Common.getImageOfProDuctById(i.maSP)" style={{ height="120px" }} />
+                    </div>
+
+                    <div class="about">
+                        <h1 class="title">@Common.getNameOfProDuctById(i.maSP)</h1>
+                        @*<img src="images/veg.png" style={{ height="30px" }} />*@
+                    </div>
+                    <div class="counter">
+                        @using (Html.BeginForm("Decrease", "CartShop", FormMethod.Post))
+                        {
+                            <input type="hidden" name="maSP" value="@i.maSP" />
+                            <button class="btn btn-default">-</button>
+                        }
+
+
+                        <div class="count">@i.soLuong</div>
+                        @using (Html.BeginForm("Increase", "CartShop", FormMethod.Post))
+                        {
+                            <input type="hidden" name="maSP" value="@i.maSP" />
+                            <button class="btn btn-default">+</button>
+                        }
+
+                    </div>
+                    <div class="prices">
+                        <div class="amount">$@i.giaBan</div>
+                        @using (Html.BeginForm("RemoveItem", "CartShop", FormMethod.Post))
+                        {
+                            <input type="hidden" name="maSP" value="@i.maSP" />
+                            <button class="remove">Delete</button>
+                        }
+
+                    </div>
+
+
+
+                </div>
+            }
+        }
+        <hr>
+        <div class="checkout">
+            <div class="total">
+                <div>
+                    <div class="Subtotal">Sub-Total</div>
+
+                </div>
+                <div class="total-amount">@x.totalOfCartShop()</div>
+            </div>
+            <a href="@Url.Action("Index","CheckOut")">
+                <button class="button">Checkout</button>
+            </a>
+
+        </div>
+    </div>
+</body>
+</html>

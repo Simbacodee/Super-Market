@@ -1,0 +1,104 @@
+﻿@using SUPERMARKET.Models;
+@model SUPERMARKET.Models.LoaiSP
+@{
+    ViewBag.Title = "Index";
+    List<LoaiSP> list = ViewData["DsLoai"] as List<LoaiSP>;
+
+}
+<style>
+    form {
+        display: inline;
+    }
+</style>
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Chủng loại hàng hóa - Nghành hàng</h3>
+                    </div>
+
+                    <!-- general form elements -->
+                    <div class="card-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Mã loại</th>
+                                    <th>Tên loại hàng</th>
+                                    <th>Số sản phẩm</th>
+                                    <th>Nhóm lệnh</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (LoaiSP i in list)
+                                {
+                                    <tr>
+                                        <td>@i.maLoai</td>
+                                        <td>@i.tenLoai</td>
+                                        <td>@i.SanPhams.Where(x => x.maLoai == i.maLoai).Count() Sản phẩm</td>
+                                        <td>
+                                            @using (Html.BeginForm("Delete", "Catagories", FormMethod.Post))
+                                            {
+                                                <input type="hidden" name="maLoai" value="@i.maLoai" />
+                                                <button class="btn btn-danger"> Xóa</button>
+                                            }
+                                            @using (Html.BeginForm("Update", "Catagories", FormMethod.Post))
+                                            {
+                                                <input type="hidden" name="mlcs" value="@i.maLoai" />
+                                                <button class="btn btn-primary">Chỉnh sửa</button>
+                                            }
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+
+            </div>
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6">
+                @using (Html.BeginForm("Index", "Catagories", FormMethod.Post))
+                {
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Thông tin chính</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Tên nhóm sản phẩm</label>
+                                    @Html.TextBoxFor(m => m.tenLoai, new { @class = "form-control", @placeholder = "Name of category..." })
+                                </div>
+                                <div class="form-group">
+                                    <label style="padding-top:18px;">Diễn giải cho loại hàng</label>
+                                    @Html.TextAreaFor(m => m.ghiChu, new { @class = "form-control", @rows = "11", @placeholder = "Enter decription of the category..." })
+                                </div>
+
+                            </div>
+                            <!-- /.card-body -->
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    @Html.HiddenFor(x => x.maLoai)
+                }
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->

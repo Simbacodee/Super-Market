@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4888b70dc8c4426eae7aa5c1db0c4f99" Name="Diagram1">
+        <EntityTypeShape EntityType="SieuThiModel.BaiViet" Width="1.5" PointX="10.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SieuThiModel.CtDonHang" Width="1.5" PointX="6.375" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SieuThiModel.DonHang" Width="1.5" PointX="8.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SieuThiModel.DScon" Width="1.5" PointX="1.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SieuThiModel.KhachHang" Width="1.5" PointX="10.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SieuThiModel.LoaiSP" Width="1.5" PointX="3.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SieuThiModel.nhanHang" Width="1.5" PointX="3.625" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SieuThiModel.SanPham" Width="1.5" PointX="1.125" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SieuThiModel.TaiKhoan" Width="1.5" PointX="6.375" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="SieuThiModel.FK__BaiViet__taiKhoa__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="SieuThiModel.FK__CtDonHang__maSP__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="SieuThiModel.FK__CtDonHang__soDH__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="SieuThiModel.FK__DonHang__maKH__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="SieuThiModel.FK__DonHang__taiKhoa__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="SieuThiModel.FK__DScon__maLoai__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="SieuThiModel.FK__SanPham__maDS__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="SieuThiModel.FK__nhanHang__maLoai__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="SieuThiModel.FK__SanPham__maLoai__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="SieuThiModel.FK__SanPham__maNH__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="SieuThiModel.FK__SanPham__taiKhoa__5070F446" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

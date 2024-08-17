@@ -1,0 +1,52 @@
+﻿@using SUPERMARKET.Models;
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Danh sách khách hàng</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Stt</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{int stt = 0;
+                                    foreach (KhachHang i in Common.getCustomer())
+                                    {
+                                        <tr>
+                                            <td>@(stt++)</td>
+                                            <td>@i.soDT</td>
+                                            <td>@i.tenKH</td>
+                                            <td>@i.diaChi</td>
+                                            <td>@i.email</td>
+                                        </tr>
+                                    }
+                                }
+
+
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>

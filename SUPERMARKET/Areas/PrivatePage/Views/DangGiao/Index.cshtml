@@ -1,0 +1,75 @@
+﻿@using SUPERMARKET.Models
+@{
+    ViewBag.Title = "Index";
+    List<DonHang> dh = ViewData["DanhSachDh"] as List<DonHang>;
+}
+
+<style>
+    form {
+        display: inline;
+    }
+</style>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Danh sách đơn hàng đang giao</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Số đơn hàng</th>
+                                    <th>Mã khách hàng</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Ngày giao</th>
+                                    <th>Nút Lệnh</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    foreach (DonHang i in dh)
+                                    {
+                                        <tr>
+                                            <td>@i.soDH</td>
+                                            <td>@i.maKH</td>
+                                            <td>@string.Format("{0:dd/MM/yyyy}", i.ngayDat)</td>
+                                            <td>@i.diaChiGH</td>
+                                            <td>@string.Format("{0:dd/MM/yyyy}", i.ngayGH)</td>
+                                            <td>
+                                                @using (Html.BeginForm("kichHoat", "DonHang", FormMethod.Post))
+                                                {
+                                                    <input type="hidden" name="maDonHang" value="@i.soDH" />
+                                                    <button class="btn btn-success" title="Kích hoạt đơn hàng này">
+                                                        Kích hoạt
+                                                    </button>
+                                                }
+                                                @using (Html.BeginForm("huyDon", "DonHang", FormMethod.Post))
+                                                {
+                                                    <input type="hidden" name="maDonHang" value="@i.soDH" />
+                                                    <button class="btn btn-danger" title="Hủy đơn hàng này">
+                                                        Hủy Đơn
+                                                    </button>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

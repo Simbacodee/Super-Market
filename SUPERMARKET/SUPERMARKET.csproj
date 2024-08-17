@@ -1,0 +1,683 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED25C7BA-E4E4-41DF-B40D-75D72F1FE7F0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SUPERMARKET</RootNamespace>
+    <AssemblyName>SUPERMARKET</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\PrivatePage\Controllers\CatagoriesController.cs" />
+    <Compile Include="Areas\PrivatePage\Controllers\DangGiaoController.cs" />
+    <Compile Include="Areas\PrivatePage\Controllers\DonHangController.cs" />
+    <Compile Include="Areas\PrivatePage\Controllers\DonHuyController.cs" />
+    <Compile Include="Areas\PrivatePage\Controllers\ListCustomerController.cs" />
+    <Compile Include="Areas\PrivatePage\Controllers\NewProductController.cs" />
+    <Compile Include="Areas\PrivatePage\Controllers\OrderListController.cs" />
+    <Compile Include="Areas\PrivatePage\Controllers\ProductController.cs" />
+    <Compile Include="Areas\PrivatePage\PrivatePageAreaRegistration.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\CartShopController.cs" />
+    <Compile Include="Controllers\CheckOutController.cs" />
+    <Compile Include="Controllers\CheckOutSuccessController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\FaqController.cs" />
+    <Compile Include="Controllers\GourmetController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginAdminController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NewAccountController.cs" />
+    <Compile Include="Controllers\OfferController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SingleController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaiViet.cs">
+      <DependentUpon>SieuThi.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CartShop.cs" />
+    <Compile Include="Models\Common.cs" />
+    <Compile Include="Models\CtDonHang.cs">
+      <DependentUpon>SieuThi.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DonHang.cs">
+      <DependentUpon>SieuThi.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DScon.cs">
+      <DependentUpon>SieuThi.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KhachHang.cs">
+      <DependentUpon>SieuThi.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoaiSP.cs">
+      <DependentUpon>SieuThi.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MaHoa.cs" />
+    <Compile Include="Models\nhanHang.cs">
+      <DependentUpon>SieuThi.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SanPham.cs">
+      <DependentUpon>SieuThi.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SieuThi.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SieuThi.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SieuThi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SieuThi.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SieuThi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SieuThi.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TaiKhoan.cs">
+      <DependentUpon>SieuThi.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\images\1.png" />
+    <Content Include="Assets\images\10.png" />
+    <Content Include="Assets\images\11.jpg" />
+    <Content Include="Assets\images\111.jpg" />
+    <Content Include="Assets\images\12.png" />
+    <Content Include="Assets\images\13.png" />
+    <Content Include="Assets\images\14.png" />
+    <Content Include="Assets\images\15.png" />
+    <Content Include="Assets\images\16.png" />
+    <Content Include="Assets\images\17.png" />
+    <Content Include="Assets\images\2.png" />
+    <Content Include="Assets\images\22.jpg" />
+    <Content Include="Assets\images\3.png" />
+    <Content Include="Assets\images\4.png" />
+    <Content Include="Assets\images\44.jpg" />
+    <Content Include="Assets\images\5.png" />
+    <Content Include="Assets\images\6.png" />
+    <Content Include="Assets\images\7.png" />
+    <Content Include="Assets\images\8.png" />
+    <Content Include="Assets\images\9.png" />
+    <Content Include="Assets\images\AdminLTELogo.png" />
+    <Content Include="Assets\images\arrow.png" />
+    <Content Include="Assets\images\b1.jpg" />
+    <Content Include="Assets\images\b3.jpg" />
+    <Content Include="Assets\images\babycare\b11.jpg" />
+    <Content Include="Assets\images\babycare\bb10.png" />
+    <Content Include="Assets\images\babycare\bb12.png" />
+    <Content Include="Assets\images\babycare\bb13.jpg" />
+    <Content Include="Assets\images\babycare\bb14.jpg" />
+    <Content Include="Assets\images\babycare\bb15.jpg" />
+    <Content Include="Assets\images\babycare\bb16.jpg" />
+    <Content Include="Assets\images\babycare\bb6.jpg" />
+    <Content Include="Assets\images\babycare\bb7.jpg" />
+    <Content Include="Assets\images\babycare\bb8.jpg" />
+    <Content Include="Assets\images\babycare\bb9.jpg" />
+    <Content Include="Assets\images\babyoil\bbb1.png" />
+    <Content Include="Assets\images\babyoil\bbb2.png" />
+    <Content Include="Assets\images\babyoil\bbb3.jpg" />
+    <Content Include="Assets\images\babyoil\bbb4.gif" />
+    <Content Include="Assets\images\babyoil\bbb5.jpg" />
+    <Content Include="Assets\images\babyoil\bbb6.jpg" />
+    <Content Include="Assets\images\babyoil\bbb7.jpg" />
+    <Content Include="Assets\images\babyoil\bbb8.jpg" />
+    <Content Include="Assets\images\babyoil\bbb9.gif" />
+    <Content Include="Assets\images\bbsoap\bb1.jpg" />
+    <Content Include="Assets\images\bbsoap\bb2.jpg" />
+    <Content Include="Assets\images\bbsoap\bb3.jpg" />
+    <Content Include="Assets\images\bbsoap\bb4.jpg" />
+    <Content Include="Assets\images\bbsoap\bb5.jpg" />
+    <Content Include="Assets\images\biscuit\bq1.jpg" />
+    <Content Include="Assets\images\biscuit\bq10.jpg" />
+    <Content Include="Assets\images\biscuit\bq2.jpg" />
+    <Content Include="Assets\images\biscuit\bq3.jpg" />
+    <Content Include="Assets\images\biscuit\bq4.jpg" />
+    <Content Include="Assets\images\biscuit\bq5.jpg" />
+    <Content Include="Assets\images\biscuit\bq6.jpg" />
+    <Content Include="Assets\images\biscuit\bq7.jpg" />
+    <Content Include="Assets\images\biscuit\bq8.jpg" />
+    <Content Include="Assets\images\biscuit\bq9.jpg" />
+    <Content Include="Assets\images\breakfast\nc1.jpg" />
+    <Content Include="Assets\images\breakfast\nc2.jpg" />
+    <Content Include="Assets\images\breakfast\nc3.jpg" />
+    <Content Include="Assets\images\breakfast\nc4.jpg" />
+    <Content Include="Assets\images\breakfast\nc5.jpg" />
+    <Content Include="Assets\images\breakfast\nc6.jpg" />
+    <Content Include="Assets\images\breakfast\nc8.jpg" />
+    <Content Include="Assets\images\bv1.png" />
+    <Content Include="Assets\images\bv2.png" />
+    <Content Include="Assets\images\bv3.png" />
+    <Content Include="Assets\images\bv4.png" />
+    <Content Include="Assets\images\bv5.png" />
+    <Content Include="Assets\images\bv6.png" />
+    <Content Include="Assets\images\bv7.png" />
+    <Content Include="Assets\images\bv8.jpg" />
+    <Content Include="Assets\images\bv8.png" />
+    <Content Include="Assets\images\bv9.png" />
+    <Content Include="Assets\images\CannedGoods\cabien.jpg" />
+    <Content Include="Assets\images\CannedGoods\camang.jpg" />
+    <Content Include="Assets\images\CannedGoods\cangudaiduong.jpg" />
+    <Content Include="Assets\images\CannedGoods\canuc.jpg" />
+    <Content Include="Assets\images\CannedGoods\catrich.jpg" />
+    <Content Include="Assets\images\CannedGoods\thitbo.jpg" />
+    <Content Include="Assets\images\CannedGoods\thitham.jpg" />
+    <Content Include="Assets\images\CannedGoods\thitheo.jpg" />
+    <Content Include="Assets\images\CannedGoods\thitxongkhoi.jpg" />
+    <Content Include="Assets\images\card.png" />
+    <Content Include="Assets\images\check.png" />
+    <Content Include="Assets\images\cleanwater\cl1.jpg" />
+    <Content Include="Assets\images\cleanwater\cl2.jpg" />
+    <Content Include="Assets\images\cleanwater\cl3.jpg" />
+    <Content Include="Assets\images\cleanwater\cl4.jpg" />
+    <Content Include="Assets\images\cleanwater\cl5.jpg" />
+    <Content Include="Assets\images\close_1.png" />
+    <Content Include="Assets\images\coffe\cf1.jpg" />
+    <Content Include="Assets\images\coffe\cf2.jpg" />
+    <Content Include="Assets\images\coffe\cf3.jpg" />
+    <Content Include="Assets\images\coffe\cf4.jpg" />
+    <Content Include="Assets\images\coffe\cf5.jpg" />
+    <Content Include="Assets\images\coffe\cf6.jpg" />
+    <Content Include="Assets\images\coffe\cf7.jpg" />
+    <Content Include="Assets\images\Cookware\bep.jpg" />
+    <Content Include="Assets\images\Cookware\bepdientu.jpg" />
+    <Content Include="Assets\images\Cookware\bepgas.jpg" />
+    <Content Include="Assets\images\Cookware\binhthuydien.jpg" />
+    <Content Include="Assets\images\Cookware\lovisong.jpg" />
+    <Content Include="Assets\images\Cookware\maycaphe.jpg" />
+    <Content Include="Assets\images\Cookware\mayepnuoc.jpg" />
+    <Content Include="Assets\images\Cookware\mayruachen.jpg" />
+    <Content Include="Assets\images\Cookware\noichao.jpg" />
+    <Content Include="Assets\images\Cookware\noicomdien.jpg" />
+    <Content Include="Assets\images\DryFruit\c2.jpg" />
+    <Content Include="Assets\images\DryFruit\coca.jpg" />
+    <Content Include="Assets\images\DryFruit\lavie.jpg" />
+    <Content Include="Assets\images\DryFruit\mirinda.jpg" />
+    <Content Include="Assets\images\DryFruit\n1.jpg" />
+    <Content Include="Assets\images\DryFruit\nutri.jpg" />
+    <Content Include="Assets\images\DryFruit\redbull.jpg" />
+    <Content Include="Assets\images\DryFruit\sting.jpg" />
+    <Content Include="Assets\images\DryFruit\wk247.jpg" />
+    <Content Include="Assets\images\DustPan\chao1.jpg" />
+    <Content Include="Assets\images\DustPan\chao2.jpg" />
+    <Content Include="Assets\images\DustPan\chao3.jpg" />
+    <Content Include="Assets\images\DustPan\chao4.jpg" />
+    <Content Include="Assets\images\DustPan\chao5.jpg" />
+    <Content Include="Assets\images\DustPan\chao6.jpg" />
+    <Content Include="Assets\images\DustPan\chao7.jpg" />
+    <Content Include="Assets\images\DustPan\chao8.jpg" />
+    <Content Include="Assets\images\DustPan\chao9.jpg" />
+    <Content Include="Assets\images\Gourmet\gu1.png" />
+    <Content Include="Assets\images\Gourmet\gu2.png" />
+    <Content Include="Assets\images\Gourmet\gu3.png" />
+    <Content Include="Assets\images\Gourmet\gu4.png" />
+    <Content Include="Assets\images\Gourmet\gu5.png" />
+    <Content Include="Assets\images\Gourmet\gu6.png" />
+    <Content Include="Assets\images\Gourmet\gu7.png" />
+    <Content Include="Assets\images\Gourmet\gu8.png" />
+    <Content Include="Assets\images\Gourmet\gu9.png" />
+    <Content Include="Assets\images\grocies\20200716_012934_455507_dau-lang-la-gi-tac-.max-1800x1800.jpg" />
+    <Content Include="Assets\images\grocies\chickpeas-dau-ga-sottolesstelle.jpg" />
+    <Content Include="Assets\images\grocies\dauDen.jpg" />
+    <Content Include="Assets\images\grocies\dauHaLan.jpg" />
+    <Content Include="Assets\images\grocies\dauNanh.jpg" />
+    <Content Include="Assets\images\grocies\dauThan.jpg" />
+    <Content Include="Assets\images\grocies\navy.jpg" />
+    <Content Include="Assets\images\grocies\peanut.jpg" />
+    <Content Include="Assets\images\grocies\pinto.jpg" />
+    <Content Include="Assets\images\gu1.png" />
+    <Content Include="Assets\images\gu2.png" />
+    <Content Include="Assets\images\gu3.png" />
+    <Content Include="Assets\images\gu4.png" />
+    <Content Include="Assets\images\gu5.png" />
+    <Content Include="Assets\images\gu6.png" />
+    <Content Include="Assets\images\gu7.png" />
+    <Content Include="Assets\images\gu8.png" />
+    <Content Include="Assets\images\gu9.png" />
+    <Content Include="Assets\images\hh1.png" />
+    <Content Include="Assets\images\hh2.png" />
+    <Content Include="Assets\images\hh3.png" />
+    <Content Include="Assets\images\hh4.png" />
+    <Content Include="Assets\images\hh5.png" />
+    <Content Include="Assets\images\hh6.png" />
+    <Content Include="Assets\images\hh7.png" />
+    <Content Include="Assets\images\hh8.png" />
+    <Content Include="Assets\images\hh9.png" />
+    <Content Include="Assets\images\icon1.png" />
+    <Content Include="Assets\images\icon2.png" />
+    <Content Include="Assets\images\knife\dao1.jpg" />
+    <Content Include="Assets\images\knife\dao2.jpg" />
+    <Content Include="Assets\images\knife\dao3.jpg" />
+    <Content Include="Assets\images\knife\dao4.jpg" />
+    <Content Include="Assets\images\knife\dao5.jpg" />
+    <Content Include="Assets\images\knife\dao6.jpg" />
+    <Content Include="Assets\images\knife\dao7.jpg" />
+    <Content Include="Assets\images\knife\dao8.jpg" />
+    <Content Include="Assets\images\knife\dao9.jpg" />
+    <Content Include="Assets\images\offer.png" />
+    <Content Include="Assets\images\p2.jpg" />
+    <Content Include="Assets\images\p3.jpg" />
+    <Content Include="Assets\images\p4.jpg" />
+    <Content Include="Assets\images\pc1.png" />
+    <Content Include="Assets\images\pc2.png" />
+    <Content Include="Assets\images\pc3.png" />
+    <Content Include="Assets\images\pc4.png" />
+    <Content Include="Assets\images\pc5.png" />
+    <Content Include="Assets\images\pc6.png" />
+    <Content Include="Assets\images\pc7.png" />
+    <Content Include="Assets\images\pc8.png" />
+    <Content Include="Assets\images\pc9.jpg" />
+    <Content Include="Assets\images\pf1.png" />
+    <Content Include="Assets\images\pf2.png" />
+    <Content Include="Assets\images\pf3.png" />
+    <Content Include="Assets\images\pf4.png" />
+    <Content Include="Assets\images\pf5.png" />
+    <Content Include="Assets\images\pf6.png" />
+    <Content Include="Assets\images\pf7.png" />
+    <Content Include="Assets\images\pf8.png" />
+    <Content Include="Assets\images\pf9.png" />
+    <Content Include="Assets\images\si1.jpg" />
+    <Content Include="Assets\images\Snack\sn1.jpg" />
+    <Content Include="Assets\images\Snack\sn10.jpg" />
+    <Content Include="Assets\images\Snack\sn11.jpg" />
+    <Content Include="Assets\images\Snack\sn12.jpg" />
+    <Content Include="Assets\images\Snack\sn13.jpg" />
+    <Content Include="Assets\images\Snack\sn14.jpg" />
+    <Content Include="Assets\images\Snack\sn15.jpg" />
+    <Content Include="Assets\images\Snack\sn2.jpg" />
+    <Content Include="Assets\images\Snack\sn3.jpg" />
+    <Content Include="Assets\images\Snack\sn4.jpg" />
+    <Content Include="Assets\images\Snack\sn5.jpg" />
+    <Content Include="Assets\images\Snack\sn6.jpg" />
+    <Content Include="Assets\images\Snack\sn7.jpg" />
+    <Content Include="Assets\images\Snack\sn8.jpg" />
+    <Content Include="Assets\images\Snack\sn9.jpg" />
+    <Content Include="Assets\images\socolaAndcandy\cd1.jpg" />
+    <Content Include="Assets\images\socolaAndcandy\cd2.jpg" />
+    <Content Include="Assets\images\socolaAndcandy\cd3.jpg" />
+    <Content Include="Assets\images\socolaAndcandy\cd4.jpg" />
+    <Content Include="Assets\images\socolaAndcandy\sc1.jpg" />
+    <Content Include="Assets\images\socolaAndcandy\sc2.jpg" />
+    <Content Include="Assets\images\socolaAndcandy\sc3.jpg" />
+    <Content Include="Assets\images\socolaAndcandy\sc4.jpg" />
+    <Content Include="Assets\images\star.png" />
+    <Content Include="Assets\images\star1.png" />
+    <Content Include="Assets\images\t1.jpg" />
+    <Content Include="Assets\images\t2.jpg" />
+    <Content Include="Assets\images\t3.jpg" />
+    <Content Include="Assets\images\t4.jpg" />
+    <Content Include="Assets\images\tick.png" />
+    <Content Include="Assets\images\user1-128x128.jpg" />
+    <Content Include="Assets\images\user2-160x160.jpg" />
+    <Content Include="Assets\images\user3-128x128.jpg" />
+    <Content Include="Assets\images\user4-128x128.jpg" />
+    <Content Include="Assets\images\user5-128x128.jpg" />
+    <Content Include="Assets\images\user6-128x128.jpg" />
+    <Content Include="Assets\images\user7-128x128.jpg" />
+    <Content Include="Assets\images\user8-128x128.jpg" />
+    <Content Include="Content\adminlte.min.css" />
+    <Content Include="Content\all.min.css" />
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\buttons.bootstrap4.min.css" />
+    <Content Include="Content\Checkout.css" />
+    <Content Include="Content\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\daterangepicker.css" />
+    <Content Include="Content\etalage.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\form.css" />
+    <Content Include="Content\icheck-bootstrap.min.css" />
+    <Content Include="Content\jqvmap.min.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\nav.css" />
+    <Content Include="Content\OverlayScrollbars.min.css" />
+    <Content Include="Content\owl.carousel.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\prettyPhoto.css" />
+    <Content Include="Content\price-range.css" />
+    <Content Include="Content\responsive.bootstrap4.min.css" />
+    <Content Include="Content\responsive.css" />
+    <Content Include="Content\shopcart.css" />
+    <Content Include="Content\skdslider.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\summernote-bs4.min.css" />
+    <Content Include="Content\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fa-brands-400.svg" />
+    <Content Include="fonts\fa-regular-400.svg" />
+    <Content Include="fonts\fa-solid-900.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\SieuThi.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SieuThi.Context.cs</LastGenOutput>
+      <DependentUpon>SieuThi.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\SieuThi.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SieuThi.edmx</DependentUpon>
+      <LastGenOutput>SieuThi.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\adminlte.js" />
+    <Content Include="Scripts\adminlte.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\PrivatePage\Views\web.config" />
+    <Content Include="Areas\PrivatePage\Views\ListCustomer\Index.cshtml" />
+    <Content Include="Areas\PrivatePage\Views\OrderList\Index.cshtml" />
+    <Content Include="Areas\PrivatePage\Views\Product\Index.cshtml" />
+    <Content Include="Areas\PrivatePage\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\PrivatePage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\PrivatePage\Views\Catagories\Index.cshtml" />
+    <Content Include="fonts\fa-brands-400.eot" />
+    <Content Include="fonts\fa-brands-400.ttf" />
+    <Content Include="fonts\fa-brands-400.woff" />
+    <Content Include="fonts\fa-brands-400.woff2" />
+    <Content Include="fonts\fa-regular-400.eot" />
+    <Content Include="fonts\fa-regular-400.ttf" />
+    <Content Include="fonts\fa-regular-400.woff" />
+    <Content Include="fonts\fa-regular-400.woff2" />
+    <Content Include="fonts\fa-solid-900.eot" />
+    <Content Include="fonts\fa-solid-900.ttf" />
+    <Content Include="fonts\fa-solid-900.woff" />
+    <Content Include="fonts\fa-solid-900.woff2" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <EntityDeploy Include="Models\SieuThi.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SieuThi.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SieuThi.edmx.diagram">
+      <DependentUpon>SieuThi.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\PrivatePage\Views\NewProduct\Index.cshtml" />
+    <Content Include="Areas\PrivatePage\Views\DonHang\Index.cshtml" />
+    <Content Include="Areas\PrivatePage\Views\DangGiao\Index.cshtml" />
+    <Content Include="Areas\PrivatePage\Views\DonHuy\Index.cshtml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\buttons.colVis.min.js" />
+    <Content Include="Scripts\buttons.html5.min.js" />
+    <Content Include="Scripts\buttons.print.min.js" />
+    <Content Include="Scripts\Chart.min.js" />
+    <Content Include="Scripts\classie.js" />
+    <Content Include="Scripts\contact.js" />
+    <Content Include="Scripts\dashboard.js" />
+    <Content Include="Scripts\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\dataTables.buttons.min.js" />
+    <Content Include="Scripts\dataTables.responsive.min.js" />
+    <Content Include="Scripts\daterangepicker.js" />
+    <Content Include="Scripts\demo.js" />
+    <Content Include="Scripts\easing.js" />
+    <Content Include="Scripts\gmaps.js" />
+    <Content Include="Scripts\html5shiv.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.easydropdown.js" />
+    <Content Include="Scripts\jquery.etalage.min.js" />
+    <Content Include="Scripts\jquery.flexisel.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.knob.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.overlayScrollbars.min.js" />
+    <Content Include="Scripts\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\jquery.scrollUp.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.vmap.min.js" />
+    <Content Include="Scripts\jquery.vmap.usa.js" />
+    <Content Include="Scripts\jszip.min.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\minicart.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\move-top.js" />
+    <Content Include="Scripts\nav.js" />
+    <Content Include="Scripts\owl.carousel.js" />
+    <Content Include="Scripts\pdfmake.min.js" />
+    <Content Include="Scripts\price-range.js" />
+    <Content Include="Scripts\responsive.bootstrap4.min.js" />
+    <Content Include="Scripts\responsiveslides.min.js" />
+    <Content Include="Scripts\skdslider.min.js" />
+    <Content Include="Scripts\sparkline.js" />
+    <Content Include="Scripts\summernote-bs4.min.js" />
+    <Content Include="Scripts\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="Scripts\uisearch.js" />
+    <Content Include="Scripts\vfs_fonts.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\CartShop\Index.cshtml" />
+    <Content Include="Views\CheckOut\Index.cshtml" />
+    <Content Include="Views\CheckOutSuccess\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Content\Index.cshtml" />
+    <Content Include="Views\Faq\Index.cshtml" />
+    <Content Include="Views\Gourmet\Index.cshtml" />
+    <Content Include="Views\LoginAdmin\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\NewAccount\Index.cshtml" />
+    <Content Include="Views\Offer\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Single\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\PrivatePage\Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61842</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61842/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
